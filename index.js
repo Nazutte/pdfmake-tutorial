@@ -1,4 +1,4 @@
-const { centerBoldGray, centerBold, rightBold, right } = require('./styles')
+const { centerBoldGray, centerBold, rightBoldGray, rightBold, right } = require('./styles')
 const { startCase } = require('lodash')
 const cashflow = require('./resources/cashflow-obj.json')
 const fs = require('fs')
@@ -56,7 +56,8 @@ const { categoryName, position } = insertCategory('firstHalf', 'openingBalance',
 const total = (cashflow.bothHalfTotal[categoryName][0]).toFixed(2);
 tables.firstHalf.body[position].push(rightBold(total));
 
-insertTypeIn('cashIn');
+const diffCashIn = ['securityDeposit'];
+insertTypeIn('cashIn', diffCashIn);
 
 tables.firstHalf.body.push([{
   text: 'CASH OUT',
@@ -66,7 +67,15 @@ tables.firstHalf.body.push([{
   fillColor: '#ffa8b5',
 }]);
 
-insertTypeIn('cashOut');
+const diffCashOut = ['cashOutOther'];
+insertTypeIn('cashOut', diffCashOut);
+
+tables.firstHalf.body.push([{
+  text: 'OTHER BALANCE',
+  colSpan: 17,
+  fontSize: 5,
+  bold: true,
+}]);
 
 let listTableDocs = {
   pageSize: 'A4',
@@ -77,37 +86,58 @@ let listTableDocs = {
   ],
 };
 
-console.log(listTableDocs.content[0].table.body);
-console.log(cashflow.cashflowObj[0].allTotal);
+const { float, pettyCash } = cashflow.cashflowObj[0].balance;
+const balanceTotal = cashflow.cashflowObj[0].allTotal.balance;
+const safeBalance = cashflow.cashflowObj[0].allTotal.safeBalance;
+
+const { position: floatPos } = insertCategory('firstHalf', 'float', float, centerBold, rightBold);
+tables.firstHalf.body[floatPos].push(rightBold('fne'));
+
+const { position: pettyCashPos } = insertCategory('firstHalf', 'pettyCash', pettyCash, centerBold, rightBold);
+tables.firstHalf.body[pettyCashPos].push(rightBold('fne'));
+
+const { position: balanceTotalPos } = insertCategory('firstHalf', 'TOTAL', balanceTotal, centerBoldGray, rightBoldGray);
+tables.firstHalf.body[balanceTotalPos].push(rightBoldGray('fne'));
+
+const { position: safeBalancePos } = insertCategory('firstHalf', 'Total Safe Balance', safeBalance, centerBoldGray, rightBoldGray);
+tables.firstHalf.body[safeBalancePos].push(rightBoldGray('fne'));
 
 const pdfDoc = pdfmake.createPdfKitDocument(listTableDocs, {});
 pdfDoc.pipe(fs.createWriteStream('pdfs/listtable.pdf'));
 pdfDoc.end();
 
 // TABLE FUNCTIONS
-function insertTypeIn(cashflowTypeString){
+function insertTypeIn(cashflowTypeString, diff){
   const cashflowType = cashflow.cashflowObj[0][cashflowTypeString];
   for(const type in cashflowType){
-    console.log(type);
-    tables.firstHalf.body.push([{
-      text: startCase(type),
-      colSpan: 17,
-      fontSize: 5,
-      bold: true,
-      fillColor: '#dedede',
-    }]);
-
-    for(const category in cashflowType[type]){
-      console.log('- ' + category);
-      console.log('-- ' + cashflowType[type][category]);
-      const { categoryName, position } = insertCategory('firstHalf', category, cashflowType[type][category], centerBold, right);
+    const found = diff.find(element => element == type);
+    if(!found){
+      tables.firstHalf.body.push([{
+        text: startCase(type),
+        colSpan: 17,
+        fontSize: 5,
+        bold: true,
+        fillColor: '#dedede',
+      }]);
+  
+      for(const category in cashflowType[type]){
+        const { categoryName, position } = insertCategory('firstHalf', category, cashflowType[type][category], centerBold, right);
+        tables.firstHalf.body[position].push(rightBold('fne'));
+      }
+  
+      const total = cashflow.cashflowObj[0].allTotal[type];
+      const { categoryName, position } = insertCategory('firstHalf', 'TOTAL', total, centerBold, rightBold);
       tables.firstHalf.body[position].push(rightBold('fne'));
     }
-
-    const total = cashflow.cashflowObj[0].allTotal[type];
-    const { categoryName, position } = insertCategory('firstHalf', 'TOTAL', total, centerBold, rightBold);
-    tables.firstHalf.body[position].push(rightBold('fne'));
   }
+
+  diff.forEach(typeString => {
+    const type = cashflowType[typeString];
+    for(const category in type){
+      const { categoryName, position } = insertCategory('firstHalf', category, type[category], centerBold, right);
+      tables.firstHalf.body[position].push(rightBold('fne'));
+    }
+  });
 }
 
 function insertCategory(table, categoryName, values, categoryStyle, valueStyle){

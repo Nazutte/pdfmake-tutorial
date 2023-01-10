@@ -1,4 +1,4 @@
-const fontSize = 4;
+const fontSize = 3.5;
 
 function centerBoldGray(text){
   return {
@@ -16,6 +16,16 @@ function centerBold(text){
     alignment: 'center',
     fontSize,
     bold: true,
+  }
+}
+
+function rightBoldGray(text){
+  return {
+    text,
+    alignment: 'right',
+    fontSize,
+    bold: true,
+    fillColor: '#dedede',
   }
 }
 
@@ -39,6 +49,7 @@ function right(text){
 module.exports = {
   centerBoldGray,
   centerBold,
+  rightBoldGray,
   rightBold,
   right,
 };
