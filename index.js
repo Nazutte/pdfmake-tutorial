@@ -1,4 +1,5 @@
 const { centerBoldGray, centerBold, rightBoldGray, rightBold, right } = require('./styles')
+const { getStartAndEndDate } = require('./helpers/get-date')
 const { startCase } = require('lodash')
 const cashflow = require('./resources/cashflow-obj.json')
 const fs = require('fs')
@@ -21,61 +22,15 @@ let tables = {
     widths: [],
     body: [[]],
   },
-  secHalf: null,
+  secHalf: {
+    headerRows: 1,
+    widths: [],
+    body: [[]],
+  },
 }
 
-let firstHalf = {
-  headerRows: 1,
-  widths: [],
-  body: [
-    [],
-  ],
-};
-
-// TABLE SETUP
-tables.firstHalf.widths.push(80);
-tables.firstHalf.body[0].push(centerBoldGray('Details'));
-for(let count = 0; count < 15; count++){
-  tables.firstHalf.widths.push('*');
-  tables.firstHalf.body[0].push(centerBoldGray(count + 1));
-}
-tables.firstHalf.widths.push('*');
-tables.firstHalf.body[0].push(centerBoldGray('Total'));
-
-const { openingBalance, cashIn } = cashflow.cashflowObj[0];
-// CASH IN
-tables.firstHalf.body.push([{
-  text: 'CASH IN',
-  colSpan: 17,
-  fontSize: 5,
-  bold: true,
-  fillColor: '#b2d3c2',
-}]);
-
-const { categoryName, position } = insertCategory('firstHalf', 'openingBalance', openingBalance, centerBold, rightBold);
-const total = (cashflow.bothHalfTotal[categoryName][0]).toFixed(2);
-tables.firstHalf.body[position].push(rightBold(total));
-
-const diffCashIn = ['securityDeposit'];
-insertTypeIn('cashIn', diffCashIn);
-
-tables.firstHalf.body.push([{
-  text: 'CASH OUT',
-  colSpan: 17,
-  fontSize: 5,
-  bold: true,
-  fillColor: '#ffa8b5',
-}]);
-
-const diffCashOut = ['cashOutOther'];
-insertTypeIn('cashOut', diffCashOut);
-
-tables.firstHalf.body.push([{
-  text: 'OTHER BALANCE',
-  colSpan: 17,
-  fontSize: 5,
-  bold: true,
-}]);
+const table = ['firstHalf'];
+makeTable(table[0]);
 
 let listTableDocs = {
   pageSize: 'A4',
@@ -86,27 +41,81 @@ let listTableDocs = {
   ],
 };
 
-const { float, pettyCash } = cashflow.cashflowObj[0].balance;
-const balanceTotal = cashflow.cashflowObj[0].allTotal.balance;
-const safeBalance = cashflow.cashflowObj[0].allTotal.safeBalance;
-
-const { position: floatPos } = insertCategory('firstHalf', 'float', float, centerBold, rightBold);
-tables.firstHalf.body[floatPos].push(rightBold('fne'));
-
-const { position: pettyCashPos } = insertCategory('firstHalf', 'pettyCash', pettyCash, centerBold, rightBold);
-tables.firstHalf.body[pettyCashPos].push(rightBold('fne'));
-
-const { position: balanceTotalPos } = insertCategory('firstHalf', 'TOTAL', balanceTotal, centerBoldGray, rightBoldGray);
-tables.firstHalf.body[balanceTotalPos].push(rightBoldGray('fne'));
-
-const { position: safeBalancePos } = insertCategory('firstHalf', 'Total Safe Balance', safeBalance, centerBoldGray, rightBoldGray);
-tables.firstHalf.body[safeBalancePos].push(rightBoldGray('fne'));
-
 const pdfDoc = pdfmake.createPdfKitDocument(listTableDocs, {});
 pdfDoc.pipe(fs.createWriteStream('pdfs/listtable.pdf'));
 pdfDoc.end();
 
 // TABLE FUNCTIONS
+function makeTable(tableName, year, month){
+  // TABLE SETUP
+  let amountOfColumns;
+  if(tableName == 'firstHalf'){
+    amountOfColumns = 15;
+  } else {
+    const amountOfDays = getStartAndEndDate(year, month);
+    amountOfColumns = 15;
+  }
+  tables[tableName].widths.push(80);
+  tables[tableName].body[0].push(centerBoldGray('Details'));
+  for(let count = 0; count < 15; count++){
+    tables[tableName].widths.push('*');
+    tables[tableName].body[0].push(centerBoldGray(count + 1));
+  }
+  tables[tableName].widths.push('*');
+  tables[tableName].body[0].push(centerBoldGray('Total'));
+
+  const { openingBalance } = cashflow.cashflowObj[0];
+  // CASH IN
+  tables[tableName].body.push([{
+    text: 'CASH IN',
+    colSpan: 17,
+    fontSize: 5,
+    bold: true,
+    fillColor: '#b2d3c2',
+  }]);
+
+  const { categoryName, position } = insertCategory(tableName, 'openingBalance', openingBalance, centerBold, rightBold);
+  const total = (cashflow.bothHalfTotal[categoryName][0]).toFixed(2);
+  tables[tableName].body[position].push(rightBold(total));
+
+  const diffCashIn = ['securityDeposit'];
+  insertTypeIn('cashIn', diffCashIn);
+
+  tables[tableName].body.push([{
+    text: 'CASH OUT',
+    colSpan: 17,
+    fontSize: 5,
+    bold: true,
+    fillColor: '#ffa8b5',
+  }]);
+
+  const diffCashOut = ['cashOutOther'];
+  insertTypeIn('cashOut', diffCashOut);
+
+  tables[tableName].body.push([{
+    text: 'OTHER BALANCE',
+    colSpan: 17,
+    fontSize: 5,
+    bold: true,
+  }]);
+
+  const { float, pettyCash } = cashflow.cashflowObj[0].balance;
+  const balanceTotal = cashflow.cashflowObj[0].allTotal.balance;
+  const safeBalance = cashflow.cashflowObj[0].allTotal.safeBalance;
+
+  const { position: floatPos } = insertCategory(tableName, 'float', float, centerBold, rightBold);
+  tables[tableName].body[floatPos].push(rightBold('fne'));
+
+  const { position: pettyCashPos } = insertCategory(tableName, 'pettyCash', pettyCash, centerBold, rightBold);
+  tables[tableName].body[pettyCashPos].push(rightBold('fne'));
+
+  const { position: balanceTotalPos } = insertCategory(tableName, 'TOTAL', balanceTotal, centerBold, rightBold);
+  tables[tableName].body[balanceTotalPos].push(rightBold('fne'));
+
+  const { position: safeBalancePos } = insertCategory(tableName, 'Total Safe Balance', safeBalance, centerBoldGray, rightBoldGray);
+  tables[tableName].body[safeBalancePos].push(rightBoldGray('fne'));
+}
+
 function insertTypeIn(cashflowTypeString, diff){
   const cashflowType = cashflow.cashflowObj[0][cashflowTypeString];
   for(const type in cashflowType){
