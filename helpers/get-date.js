@@ -10,6 +10,7 @@ function getPreviousDate(stringDate){
 }
 
 function getStartAndEndDate(year, month){
+  console.log(year, month);
   return {
     startDate: year + '-' + month + '-' + '1',
     endDate: year + '-' + month + '-' + new Date(year, month, 0).getDate()

@@ -1,5 +1,4 @@
 const { centerBoldGray, centerBold, rightBoldGray, rightBold, right } = require('./styles')
-const { getStartAndEndDate } = require('./helpers/get-date')
 const { startCase } = require('lodash')
 const cashflow = require('./resources/cashflow-obj.json')
 const fs = require('fs')
@@ -30,7 +29,7 @@ let tables = {
 }
 
 const table = ['firstHalf'];
-makeTable(table[0]);
+makeTable(table[0], 2022, 09);
 
 let listTableDocs = {
   pageSize: 'A4',
@@ -49,15 +48,20 @@ pdfDoc.end();
 function makeTable(tableName, year, month){
   // TABLE SETUP
   let amountOfColumns;
+  let isFisrtHalf;
   if(tableName == 'firstHalf'){
     amountOfColumns = 15;
+    isFisrtHalf = true;
   } else {
-    const amountOfDays = getStartAndEndDate(year, month);
-    amountOfColumns = 15;
+    amountOfColumns = new Date(year, month, 0).getDate();
+    isFisrtHalf = false;
   }
+  console.log(amountOfColumns);
+  console.log(isFisrtHalf);
+
   tables[tableName].widths.push(80);
   tables[tableName].body[0].push(centerBoldGray('Details'));
-  for(let count = 0; count < 15; count++){
+  for(let count = 0; count < amountOfColumns; count++){
     tables[tableName].widths.push('*');
     tables[tableName].body[0].push(centerBoldGray(count + 1));
   }
