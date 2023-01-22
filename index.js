@@ -47,12 +47,15 @@ pdfDoc.end();
 // TABLE FUNCTIONS
 function makeTable(tableName, year, month){
   // TABLE SETUP
+  let allTotalIndex;
   let amountOfColumns;
   let isFisrtHalf;
   if(tableName == 'firstHalf'){
+    allTotalIndex = 0;
     amountOfColumns = 15;
     isFisrtHalf = true;
   } else {
+    allTotalIndex = 1;
     amountOfColumns = new Date(year, month, 0).getDate();
     isFisrtHalf = false;
   }
@@ -79,11 +82,11 @@ function makeTable(tableName, year, month){
   }]);
 
   const { categoryName, position } = insertCategory(tableName, 'openingBalance', openingBalance, centerBold, rightBold);
-  const total = (cashflow.bothHalfTotal[categoryName][0]).toFixed(2);
+  const total = (cashflow.bothHalfTotal[categoryName][allTotalIndex]).toFixed(2);
   tables[tableName].body[position].push(rightBold(total));
 
   const diffCashIn = ['securityDeposit'];
-  insertTypeIn('cashIn', diffCashIn);
+  insertTypeIn('cashIn', diffCashIn, tableName);
 
   tables[tableName].body.push([{
     text: 'CASH OUT',
@@ -94,7 +97,7 @@ function makeTable(tableName, year, month){
   }]);
 
   const diffCashOut = ['cashOutOther'];
-  insertTypeIn('cashOut', diffCashOut);
+  insertTypeIn('cashOut', diffCashOut, tableName);
 
   tables[tableName].body.push([{
     text: 'OTHER BALANCE',
@@ -104,10 +107,11 @@ function makeTable(tableName, year, month){
   }]);
 
   const { float, pettyCash } = cashflow.cashflowObj[0].balance;
-  const balanceTotal = cashflow.cashflowObj[0].allTotal.balance;
-  const safeBalance = cashflow.cashflowObj[0].allTotal.safeBalance;
+  const balanceTotal = cashflow.cashflowObj[allTotalIndex].allTotal.balance;
+  const safeBalance = cashflow.cashflowObj[allTotalIndex].allTotal.safeBalance;
 
   const { position: floatPos } = insertCategory(tableName, 'float', float, centerBold, rightBold);
+  // const floatTotal = cashflow.bothHalfTotal.balance.float[0]
   tables[tableName].body[floatPos].push(rightBold('fne'));
 
   const { position: pettyCashPos } = insertCategory(tableName, 'pettyCash', pettyCash, centerBold, rightBold);
@@ -120,12 +124,12 @@ function makeTable(tableName, year, month){
   tables[tableName].body[safeBalancePos].push(rightBoldGray('fne'));
 }
 
-function insertTypeIn(cashflowTypeString, diff){
+function insertTypeIn(cashflowTypeString, diff, tableName){
   const cashflowType = cashflow.cashflowObj[0][cashflowTypeString];
   for(const type in cashflowType){
     const found = diff.find(element => element == type);
     if(!found){
-      tables.firstHalf.body.push([{
+      tables[tableName].body.push([{
         text: startCase(type),
         colSpan: 17,
         fontSize: 5,
@@ -134,28 +138,28 @@ function insertTypeIn(cashflowTypeString, diff){
       }]);
   
       for(const category in cashflowType[type]){
-        const { categoryName, position } = insertCategory('firstHalf', category, cashflowType[type][category], centerBold, right);
-        tables.firstHalf.body[position].push(rightBold('fne'));
+        const { categoryName, position } = insertCategory(tableName, category, cashflowType[type][category], centerBold, right);
+        tables[tableName].body[position].push(rightBold('fne'));
       }
   
       const total = cashflow.cashflowObj[0].allTotal[type];
-      const { categoryName, position } = insertCategory('firstHalf', 'TOTAL', total, centerBold, rightBold);
-      tables.firstHalf.body[position].push(rightBold('fne'));
+      const { categoryName, position } = insertCategory(tableName, 'TOTAL', total, centerBold, rightBold);
+      tables[tableName].body[position].push(rightBold('fne'));
     }
   }
 
   diff.forEach(typeString => {
     const type = cashflowType[typeString];
     for(const category in type){
-      const { categoryName, position } = insertCategory('firstHalf', category, type[category], centerBold, right);
-      tables.firstHalf.body[position].push(rightBold('fne'));
+      const { categoryName, position } = insertCategory(tableName, category, type[category], centerBold, right);
+      tables[tableName].body[position].push(rightBold('fne'));
     }
   });
 }
 
 function insertCategory(table, categoryName, values, categoryStyle, valueStyle){
   const stcaseCategory = startCase(categoryName);
-  const position = tables[table].body.length
+  const position = tables[table].body.length;
 
   tables[table].body.push([]);
   tables[table].body[position].push(categoryStyle(stcaseCategory));
