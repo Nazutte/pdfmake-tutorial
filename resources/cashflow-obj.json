@@ -1,57 +1,57 @@
 {
     "cashflowObj": [
         {
-            "day": 30,
+            "day": 31,
             "dailyRecord": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45
             ],
             "openingBalance": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                439233769,
+                439796684,
+                442800825,
+                443609318,
+                446479046,
+                450633151,
+                459706153,
+                459881106,
+                459881106,
+                461043802,
+                462719957,
+                464001395,
+                464001395,
+                464440070,
+                464440070
             ],
             "closingBalance": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                439796684,
+                442800825,
+                443609318,
+                446479046,
+                450633151,
+                459706153,
+                459881106,
+                459881106,
+                461043802,
+                462719957,
+                464001395,
+                464001395,
+                464440070,
+                464440070,
+                464450379
             ],
             "cashIn": {
                 "electricity": {
@@ -62,8 +62,28 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 54,
+                            "amount": 524158,
+                            "comment": null
+                        },
+                        {
+                            "id": 56,
+                            "amount": 312400,
+                            "comment": null
+                        },
+                        {
+                            "id": 58,
+                            "amount": 585726,
+                            "comment": null
+                        },
+                        {
+                            "id": 60,
+                            "amount": 1861365,
+                            "comment": null
+                        },
+                        {
+                            "id": 62,
+                            "amount": 41837,
                             "comment": null
                         },
                         {
@@ -77,8 +97,13 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 67,
+                            "amount": 364472,
+                            "comment": null
+                        },
+                        {
+                            "id": 69,
+                            "amount": 552200,
                             "comment": null
                         },
                         {
@@ -92,33 +117,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
+                            "id": 73,
+                            "amount": 74048,
                             "comment": null
                         },
                         {
@@ -159,8 +159,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 63,
+                            "amount": 574995,
                             "comment": null
                         },
                         {
@@ -236,8 +236,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 65,
+                            "amount": 6889951,
                             "comment": null
                         },
                         {
@@ -261,8 +261,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 72,
+                            "amount": 1235995,
                             "comment": null
                         },
                         {
@@ -288,8 +288,38 @@
                     ],
                     "domestic": [
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 53,
+                            "amount": 562915,
+                            "comment": null
+                        },
+                        {
+                            "id": 55,
+                            "amount": 2479983,
+                            "comment": null
+                        },
+                        {
+                            "id": 57,
+                            "amount": 465493,
+                            "comment": null
+                        },
+                        {
+                            "id": 59,
+                            "amount": 2284002,
+                            "comment": null
+                        },
+                        {
+                            "id": 61,
+                            "amount": 2292740,
+                            "comment": null
+                        },
+                        {
+                            "id": 64,
+                            "amount": 1566219,
+                            "comment": null
+                        },
+                        {
+                            "id": 66,
+                            "amount": 174953,
                             "comment": null
                         },
                         {
@@ -298,8 +328,18 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 68,
+                            "amount": 798224,
+                            "comment": null
+                        },
+                        {
+                            "id": 70,
+                            "amount": 1123955,
+                            "comment": null
+                        },
+                        {
+                            "id": 71,
+                            "amount": 45443,
                             "comment": null
                         },
                         {
@@ -308,8 +348,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 74,
+                            "amount": 364627,
                             "comment": null
                         },
                         {
@@ -318,48 +358,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
-                            "comment": null
-                        },
-                        {
-                            "id": null,
-                            "amount": null,
+                            "id": 75,
+                            "amount": 10309,
                             "comment": null
                         }
                     ]
@@ -1232,8 +1232,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 92,
+                            "amount": 30600,
                             "comment": null
                         },
                         {
@@ -2440,21 +2440,21 @@
             },
             "allTotal": {
                 "electricity": [
+                    562915,
+                    3004141,
+                    777893,
+                    2869728,
+                    4154105,
+                    9073002,
+                    174953,
                     0,
+                    1162696,
+                    1676155,
+                    1281438,
                     0,
+                    438675,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    10309
                 ],
                 "water": [
                     0,
@@ -2510,7 +2510,7 @@
                 "securityDeposit": [
                     0,
                     0,
-                    0,
+                    30600,
                     0,
                     0,
                     0,
@@ -2542,21 +2542,21 @@
                     0
                 ],
                 "cashIn": [
+                    562915,
+                    3004141,
+                    808493,
+                    2869728,
+                    4154105,
+                    9073002,
+                    174953,
                     0,
+                    1162696,
+                    1676155,
+                    1281438,
                     0,
+                    438675,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    10309
                 ],
                 "deposit": [
                     0,
@@ -2663,57 +2663,60 @@
             }
         },
         {
-            "day": 30,
+            "day": 31,
             "dailyRecord": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61
             ],
             "openingBalance": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                464450379,
+                465776203,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467265807,
+                467891846,
+                467989159,
+                468115033,
+                468228009,
+                469074352
             ],
             "closingBalance": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
+                465776203,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467113075,
+                467265807,
+                467891846,
+                467989159,
+                468115033,
+                468228009,
+                469074352,
+                479807994
             ],
             "cashIn": {
                 "electricity": {
@@ -2724,8 +2727,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 78,
+                            "amount": 92155,
                             "comment": null
                         },
                         {
@@ -2769,8 +2772,8 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 82,
+                            "amount": 3374,
                             "comment": null
                         },
                         {
@@ -2789,15 +2792,25 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 87,
+                            "amount": 62902,
+                            "comment": null
+                        },
+                        {
+                            "id": 89,
+                            "amount": 6886,
                             "comment": null
                         }
                     ],
                     "businessSpecial": [
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 76,
+                            "amount": 1178124,
+                            "comment": null
+                        },
+                        {
+                            "id": 79,
+                            "amount": 1103992,
                             "comment": null
                         },
                         {
@@ -2946,12 +2959,22 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": 91,
+                            "amount": 8769368,
+                            "comment": null
                         }
                     ],
                     "domestic": [
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 77,
+                            "amount": 147700,
+                            "comment": null
+                        },
+                        {
+                            "id": 80,
+                            "amount": 140725,
                             "comment": null
                         },
                         {
@@ -2990,38 +3013,38 @@
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 81,
+                            "amount": 152732,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 83,
+                            "amount": 622665,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 84,
+                            "amount": 97313,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 85,
+                            "amount": 125874,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 86,
+                            "amount": 112976,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 88,
+                            "amount": 783441,
                             "comment": null
                         },
                         {
-                            "id": null,
-                            "amount": null,
+                            "id": 90,
+                            "amount": 1957388,
                             "comment": null
                         }
                     ]
@@ -3102,9 +3125,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "businessSpecial": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -3256,9 +3289,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "domestic": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -3412,9 +3455,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "businessSpecial": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -3566,9 +3619,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "domestic": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -3722,11 +3785,21 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ]
                 },
                 "otherIncome": {
                     "miscellaneous": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -3878,11 +3951,21 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ]
                 },
                 "securityDeposit": {
                     "securityDeposit": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4038,9 +4121,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "cashSecurityDeposit": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4192,9 +4285,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "online": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4346,9 +4449,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "cheque": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4500,9 +4613,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "directTransfer": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4656,9 +4779,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "pettyCash": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -4810,6 +4943,11 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "invoice": [
@@ -4887,9 +5025,19 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ],
                     "gst": [
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
+                        },
                         {
                             "id": null,
                             "amount": null,
@@ -5043,12 +5191,18 @@
                             "id": null,
                             "amount": null,
                             "comment": null
+                        },
+                        {
+                            "id": null,
+                            "amount": null,
+                            "comment": null
                         }
                     ]
                 }
             },
             "balance": {
                 "id": [
+                    0,
                     0,
                     0,
                     0,
@@ -5080,9 +5234,11 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "pettyCash": [
+                    0,
                     0,
                     0,
                     0,
@@ -5102,6 +5258,8 @@
             },
             "allTotal": {
                 "electricity": [
+                    1325824,
+                    1336872,
                     0,
                     0,
                     0,
@@ -5109,16 +5267,16 @@
                     0,
                     0,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    152732,
+                    626039,
+                    97313,
+                    125874,
+                    112976,
+                    846343,
+                    10733642
                 ],
                 "water": [
+                    0,
                     0,
                     0,
                     0,
@@ -5150,9 +5308,11 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "otherIncome": [
+                    0,
                     0,
                     0,
                     0,
@@ -5184,6 +5344,7 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "ice": [
@@ -5201,9 +5362,12 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "cashIn": [
+                    1325824,
+                    1336872,
                     0,
                     0,
                     0,
@@ -5211,16 +5375,16 @@
                     0,
                     0,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    152732,
+                    626039,
+                    97313,
+                    125874,
+                    112976,
+                    846343,
+                    10733642
                 ],
                 "deposit": [
+                    0,
                     0,
                     0,
                     0,
@@ -5252,9 +5416,11 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "cashOutOther": [
+                    0,
                     0,
                     0,
                     0,
@@ -5286,6 +5452,7 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "balance": [
@@ -5303,9 +5470,11 @@
                     0,
                     0,
                     0,
+                    0,
                     0
                 ],
                 "safeBalance": [
+                    0,
                     0,
                     0,
                     0,
@@ -5341,20 +5510,20 @@
         "cashIn": {
             "electricity": {
                 "business": [
-                    0,
-                    0
+                    4316206,
+                    165317
                 ],
                 "businessSpecial": [
-                    0,
-                    0
+                    574995,
+                    2282116
                 ],
                 "government": [
-                    0,
-                    0
+                    8125946,
+                    8769368
                 ],
                 "domestic": [
-                    0,
-                    0
+                    12168863,
+                    4140814
                 ]
             },
             "water": {
@@ -5411,7 +5580,7 @@
             },
             "securityDeposit": {
                 "securityDeposit": [
-                    0,
+                    30600,
                     0
                 ]
             }
@@ -5496,8 +5665,8 @@
         },
         "allTotal": {
             "electricity": [
-                0,
-                0
+                25186010,
+                15357615
             ],
             "water": [
                 0,
@@ -5512,7 +5681,7 @@
                 0
             ],
             "securityDeposit": [
-                0,
+                30600,
                 0
             ],
             "ice": [
@@ -5520,8 +5689,8 @@
                 0
             ],
             "cashIn": [
-                0,
-                0
+                25216610,
+                15357615
             ],
             "deposit": [
                 0,
@@ -5562,16 +5731,16 @@
         "cashIn": {
             "electricity": {
                 "business": [
-                    0
+                    4481523
                 ],
                 "businessSpecial": [
-                    0
+                    2857111
                 ],
                 "government": [
-                    0
+                    16895314
                 ],
                 "domestic": [
-                    0
+                    16309677
                 ]
             },
             "water": {
@@ -5617,7 +5786,7 @@
             },
             "securityDeposit": {
                 "securityDeposit": [
-                    0
+                    30600
                 ]
             }
         },
@@ -5684,7 +5853,7 @@
         },
         "allTotal": {
             "electricity": [
-                0
+                40543625
             ],
             "water": [
                 0
@@ -5696,13 +5865,13 @@
                 0
             ],
             "securityDeposit": [
-                0
+                30600
             ],
             "ice": [
                 0
             ],
             "cashIn": [
-                0
+                40574225
             ],
             "deposit": [
                 0
