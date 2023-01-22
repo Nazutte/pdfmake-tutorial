@@ -198,10 +198,10 @@ function insertTypeIn(cashflowTypeString, diff, tableName, allTotalIndex, colSpa
       const { categoryName, position } = insertCategory(tableName, 'TOTAL', total, centerBold, rightBold);
       const categoryTotal = (cashflow.bothHalfTotal.allTotal[type][allTotalIndex]).toFixed(2);
       tables[tableName].body[position].push(rightBold(categoryTotal));
-      if(isFisrtHalf){
-        const categoryGrandTotal = (cashflow.grandTotal.allTotal[type][0]).toFixed(2);
-        tables[tableName].body[position].push(rightBold(categoryGrandTotal));
-      }
+      // if(isFisrtHalf){
+      //   const categoryGrandTotal = (cashflow.grandTotal.allTotal[type][0]).toFixed(2);
+      //   tables[tableName].body[position].push(rightBold(categoryGrandTotal));
+      // }
     }
   }
 
