@@ -69,8 +69,8 @@ function makeTable(tableName, year, month){
     allTotalIndex = 1;
     amountOfColumns = new Date(year, month, 0).getDate() - 15;
     isFisrtHalf = false;
-    colSpan = 17;
-    // colSpan = amountOfColumns + 3
+    // colSpan = 17;
+    colSpan = amountOfColumns + 3
   }
   console.log('Both Half Total Position: ' + allTotalIndex);
   console.log('Amount of Columns: ' + amountOfColumns);
@@ -82,7 +82,7 @@ function makeTable(tableName, year, month){
   tables[tableName].body[0].push(centerBoldGray('Details'));
   for(let count = 0; count < amountOfColumns; count++){
     tables[tableName].widths.push('*');
-    if(isFisrtHalf){
+    if(isFisrtHalf == true){
       tables[tableName].body[0].push(centerBoldGray(count + 1));
     } else {
       tables[tableName].body[0].push(centerBoldGray(15 + count + 1));
@@ -90,10 +90,10 @@ function makeTable(tableName, year, month){
   }
   tables[tableName].widths.push('*');
   tables[tableName].body[0].push(centerBoldGray('Total'));
-  // if(isFisrtHalf){
-    // tables[tableName].widths.push('*');
-    // tables[tableName].body[0].push(centerBoldGray('Grand Total'));
-  // }
+  if(isFisrtHalf == false){
+    tables[tableName].widths.push('*');
+    tables[tableName].body[0].push(centerBoldGray('Grand Total'));
+  }
 
   const { openingBalance } = cashflow.cashflowObj[0];
   // CASH IN
@@ -108,10 +108,10 @@ function makeTable(tableName, year, month){
   const { categoryName, position } = insertCategory(tableName, 'openingBalance', openingBalance, centerBold, rightBold);
   const total = (cashflow.bothHalfTotal[categoryName][allTotalIndex]).toFixed(2);
   tables[tableName].body[position].push(rightBold(total));
-  // if(isFisrtHalf){
-  //   const total = (cashflow.grandTotal[categoryName][0]).toFixed(2);
-  //   tables[tableName].body[position].push(rightBold(total));
-  // }
+  if(isFisrtHalf == false){
+    const total = (cashflow.grandTotal[categoryName][0]).toFixed(2);
+    tables[tableName].body[position].push(rightBold(total));
+  }
 
   const diffCashIn = ['securityDeposit'];
   insertTypeIn('cashIn', diffCashIn, tableName, allTotalIndex, colSpan, isFisrtHalf);
@@ -141,34 +141,34 @@ function makeTable(tableName, year, month){
   const { position: floatPos } = insertCategory(tableName, 'float', float, centerBold, rightBold);
   const floatTotal = (cashflow.bothHalfTotal.balance.float[allTotalIndex]).toFixed(2);
   tables[tableName].body[floatPos].push(rightBold(floatTotal));
-  // if(isFisrtHalf){
-  //   const floatGrandTotal = (cashflow.grandTotal.balance.float[0]).toFixed(2);
-  //   tables[tableName].body[floatPos].push(rightBold(floatGrandTotal));
-  // }
+  if(isFisrtHalf == false){
+    const floatGrandTotal = (cashflow.grandTotal.balance.float[0]).toFixed(2);
+    tables[tableName].body[floatPos].push(rightBold(floatGrandTotal));
+  }
 
   const { position: pettyCashPos } = insertCategory(tableName, 'pettyCash', pettyCash, centerBold, rightBold);
   const pettyCashTotal = (cashflow.bothHalfTotal.balance.pettyCash[allTotalIndex]).toFixed(2);
   tables[tableName].body[pettyCashPos].push(rightBold(pettyCashTotal));
-  // if(isFisrtHalf){
-  //   const pettyCashGrandTotal = (cashflow.grandTotal.balance.pettyCash[0]).toFixed(2);
-  //   tables[tableName].body[pettyCashPos].push(rightBold(pettyCashGrandTotal));
-  // }
+  if(isFisrtHalf == false){
+    const pettyCashGrandTotal = (cashflow.grandTotal.balance.pettyCash[0]).toFixed(2);
+    tables[tableName].body[pettyCashPos].push(rightBold(pettyCashGrandTotal));
+  }
 
   const { position: balanceTotalPos } = insertCategory(tableName, 'TOTAL', balanceTotal, centerBold, rightBold);
   const allBalanceTotal = (cashflow.bothHalfTotal.allTotal.balance[allTotalIndex]).toFixed(2);
   tables[tableName].body[balanceTotalPos].push(rightBold(allBalanceTotal));
-  // if(isFisrtHalf){
-  //   const allBalanceGrandTotal = (cashflow.grandTotal.allTotal.balance[0]).toFixed(2);
-  //   tables[tableName].body[balanceTotalPos].push(rightBold(allBalanceGrandTotal));
-  // }
+  if(isFisrtHalf == false){
+    const allBalanceGrandTotal = (cashflow.grandTotal.allTotal.balance[0]).toFixed(2);
+    tables[tableName].body[balanceTotalPos].push(rightBold(allBalanceGrandTotal));
+  }
 
   const { position: safeBalancePos } = insertCategory(tableName, 'Total Safe Balance', safeBalance, centerBoldGray, rightBoldGray);
   const allSafeBalanceTotal = (cashflow.bothHalfTotal.allTotal.safeBalance[allTotalIndex]).toFixed(2);
   tables[tableName].body[safeBalancePos].push(rightBoldGray(allSafeBalanceTotal));
-  // if(isFisrtHalf){
-  //   const allSafeBalanceGrandTotal = (cashflow.grandTotal.allTotal.safeBalance[0]).toFixed(2);
-  //   tables[tableName].body[safeBalancePos].push(rightBoldGray(allSafeBalanceGrandTotal));
-  // }
+  if(isFisrtHalf == false){
+    const allSafeBalanceGrandTotal = (cashflow.grandTotal.allTotal.safeBalance[0]).toFixed(2);
+    tables[tableName].body[safeBalancePos].push(rightBoldGray(allSafeBalanceGrandTotal));
+  }
 }
 
 function insertTypeIn(cashflowTypeString, diff, tableName, allTotalIndex, colSpan, isFisrtHalf){
@@ -188,20 +188,20 @@ function insertTypeIn(cashflowTypeString, diff, tableName, allTotalIndex, colSpa
         const { categoryName, position } = insertCategory(tableName, category, cashflowType[type][category], centerBold, right);
         const categoryTotal = (cashflow.bothHalfTotal[cashflowTypeString][type][categoryName][allTotalIndex]).toFixed(2);
         tables[tableName].body[position].push(rightBold(categoryTotal));
-        // if(isFisrtHalf){
-        //   const categoryGrandTotal = (cashflow.grandTotal[cashflowTypeString][type][categoryName][0]).toFixed(2);
-        //   tables[tableName].body[position].push(rightBold(categoryGrandTotal));
-        // }
+        if(isFisrtHalf == false){
+          const categoryGrandTotal = (cashflow.grandTotal[cashflowTypeString][type][categoryName][0]).toFixed(2);
+          tables[tableName].body[position].push(rightBold(categoryGrandTotal));
+        }
       }
   
       const total = cashflow.cashflowObj[0].allTotal[type];
       const { categoryName, position } = insertCategory(tableName, 'TOTAL', total, centerBold, rightBold);
       const categoryTotal = (cashflow.bothHalfTotal.allTotal[type][allTotalIndex]).toFixed(2);
       tables[tableName].body[position].push(rightBold(categoryTotal));
-      // if(isFisrtHalf){
-      //   const categoryGrandTotal = (cashflow.grandTotal.allTotal[type][0]).toFixed(2);
-      //   tables[tableName].body[position].push(rightBold(categoryGrandTotal));
-      // }
+      if(isFisrtHalf == false){
+        const categoryGrandTotal = (cashflow.grandTotal.allTotal[type][0]).toFixed(2);
+        tables[tableName].body[position].push(rightBold(categoryGrandTotal));
+      }
     }
   }
 
@@ -211,10 +211,10 @@ function insertTypeIn(cashflowTypeString, diff, tableName, allTotalIndex, colSpa
       const { categoryName, position } = insertCategory(tableName, category, type[category], centerBold, right);
       const categoryTotal = (cashflow.bothHalfTotal[cashflowTypeString][typeString][categoryName][allTotalIndex]).toFixed(2);
       tables[tableName].body[position].push(rightBold(categoryTotal));
-      // if(isFisrtHalf){
-      //   const categoryGrandTotal = (cashflow.grandTotal[cashflowTypeString][typeString][categoryName][0]).toFixed(2);
-      //   tables[tableName].body[position].push(rightBold(categoryGrandTotal));
-      // }
+      if(isFisrtHalf == false){
+        const categoryGrandTotal = (cashflow.grandTotal[cashflowTypeString][typeString][categoryName][0]).toFixed(2);
+        tables[tableName].body[position].push(rightBold(categoryGrandTotal));
+      }
     }
   });
 }
