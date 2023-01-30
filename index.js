@@ -29,8 +29,8 @@ let tables = {
 }
 
 const table = ['firstHalf', 'secHalf'];
-makeTable(table[0], 2022, 10);
-makeTable(table[1], 2022, 10);
+makeCashflowTable(table[0], 2022, 10);
+makeCashflowTable(table[1], 2022, 10);
 
 let listTableDocs = {
   pageSize: 'A4',
@@ -51,11 +51,11 @@ let listTableDocs = {
 // });
 
 const pdfDoc = pdfmake.createPdfKitDocument(listTableDocs, {});
-pdfDoc.pipe(fs.createWriteStream('pdfs/listtable.pdf'));
+pdfDoc.pipe(fs.createWriteStream('pdfs/cashflow.pdf'));
 pdfDoc.end();
 
 // TABLE FUNCTIONS
-function makeTable(tableName, year, month){
+function makeCashflowTable(tableName, year, month){
   // TABLE SETUP
   let allTotalIndex;
   let amountOfColumns;
