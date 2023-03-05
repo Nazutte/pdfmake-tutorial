@@ -83,3 +83,5 @@ const sampleTable = {
     ['Sita', '30', 'Female', '95', '95', '80', '95'],
     ['Laxman', '26', 'Male', '70', '90', '75', '90'],
   ]};
+
+  module.exports = sampleTable

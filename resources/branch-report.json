@@ -1,0 +1,479 @@
+{
+    "id": 6,
+    "shortName": "B",
+    "name": "Baa Atoll",
+    "branch": [
+        {
+            "id": 75,
+            "name": "Dharavandhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 76,
+            "name": "Dhonfanu",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 77,
+            "name": "Eydhafushi",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 78,
+            "name": "Fehendhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 79,
+            "name": "Fulhadhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 80,
+            "name": "Goidhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 81,
+            "name": "Hithaadhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 82,
+            "name": "Kamadhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 83,
+            "name": "Kendhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 84,
+            "name": "Kihaadhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 85,
+            "name": "Kudarikilu",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 86,
+            "name": "Maalhos",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        },
+        {
+            "id": 87,
+            "name": "Thulhaadhoo",
+            "record": {
+                "openingBalance": 0,
+                "closingBalance": 0,
+                "cashInRecord": {
+                    "electricity": 0,
+                    "water": 0,
+                    "sewerage": 0,
+                    "other income": 0,
+                    "security deposit": 0,
+                    "ice": 0
+                },
+                "cashInRecordTotal": 0,
+                "cashOutRecord": {
+                    "cash": 0,
+                    "cash security deposit": 0,
+                    "atm": 0,
+                    "online": 0,
+                    "cash agent": 0,
+                    "cheque": 0,
+                    "cash card": 0,
+                    "direct transfer": 0,
+                    "payment": 0,
+                    "settlement": 0
+                },
+                "cashOutRecordTotal": 0,
+                "other": {
+                    "float": 0,
+                    "pettyCash": 0
+                }
+            }
+        }
+    ],
+    "grandTotal": {
+        "openingBalance": 0,
+        "closingBalance": 0,
+        "cashInRecord": {
+            "electricity": 0,
+            "water": 0,
+            "sewerage": 0,
+            "other income": 0,
+            "security deposit": 0,
+            "ice": 0
+        },
+        "cashInRecordTotal": 0,
+        "cashOutRecord": {
+            "cash": 0,
+            "cash security deposit": 0,
+            "atm": 0,
+            "online": 0,
+            "cash agent": 0,
+            "cheque": 0,
+            "cash card": 0,
+            "direct transfer": 0,
+            "payment": 0,
+            "settlement": 0
+        },
+        "cashOutRecordTotal": 0,
+        "other": {
+            "float": 0,
+            "pettyCash": 0
+        }
+    }
+}
