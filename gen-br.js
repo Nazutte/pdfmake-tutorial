@@ -1,91 +1,80 @@
 const { centerBoldGray, centerBold, rightBoldGray, rightBold, right } = require('./styles')
 const { startCase } = require('lodash')
-const branchData = require('./resources/cashflow-obj.json')
+const branchData = require('./resources/branch-report.json')
 const fs = require('fs')
 const Pdfmake = require('pdfmake')
 
-const fonts = {
-  Roboto: {
-    normal: 'fonts/Roboto-Regular.ttf',
-    bold: 'fonts/Roboto-Medium.ttf',
-    italics: 'fonts/Roboto-Italic.ttf',
-    bolditalics: 'fonts/Roboto-MediumItalic.ttf',
-  }
-};
+function main(){
+  const fonts = {
+    Roboto: {
+      normal: 'fonts/Roboto-Regular.ttf',
+      bold: 'fonts/Roboto-Medium.ttf',
+      italics: 'fonts/Roboto-Italic.ttf',
+      bolditalics: 'fonts/Roboto-MediumItalic.ttf',
+    }
+  };
 
-const pdfmake = new Pdfmake(fonts);
+  const pdfmake = new Pdfmake(fonts);
 
-const fontSize = 5.4;
+  const branchReport = createBranchReport();
 
-const tables = {
-  branchReport: {
-    headerRows: 2,
-    widths: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
-    body: [
-      [
-        { text: 'Branch', alignment: 'center', rowSpan: 2, fontSize },
-        { text: 'Opening Balance', alignment: 'center', rowSpan: 2, fontSize },
-        { text: 'Cash In', alignment: 'center', colSpan: 7, fontSize },
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        { text: 'Cash Out', alignment: 'center', colSpan: 11, fontSize },
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        { text: 'Closing Balance', alignment: 'center', rowSpan: 2, fontSize },
-        { text: 'Other Balance', alignment: 'center', colSpan: 2, fontSize },
-        {},
-      ],
-      [
-        {},
-        {},
-        { text: 'Electric', alignment: 'center', fontSize },
-        { text: 'Water', alignment: 'center', fontSize },
-        { text: 'Sewerage', alignment: 'center', fontSize },
-        { text: 'Other Income', alignment: 'center', fontSize },
-        { text: 'Ice', alignment: 'center', fontSize },
-        { text: 'Security Deposit', alignment: 'center', fontSize },
-        { text: 'Total', alignment: 'center', fontSize },
-
-        { text: 'Cash Deposit', alignment: 'center', fontSize },
-        { text: 'Security Deposit', alignment: 'center', fontSize },
-        { text: 'ATM Deposit', alignment: 'center', fontSize },
-        { text: 'Online', alignment: 'center', fontSize },
-        { text: 'Cash Agent', alignment: 'center', fontSize },
-        { text: 'Cheque Deposit', alignment: 'center', fontSize },
-        { text: 'Card Collection', alignment: 'center', fontSize },
-        { text: 'Direct Transfer', alignment: 'center', fontSize },
-        { text: 'Payments', alignment: 'center', fontSize },
-        { text: 'Settlement', alignment: 'center', fontSize },
-        { text: 'Total', alignment: 'center', fontSize },
-        {},
-        { text: 'Float', alignment: 'center', fontSize },
-        { text: 'Petty Cash', alignment: 'center', fontSize },
-      ],
+  const listTableDocs = {
+    pageSize: 'A4',
+    pageOrientation: 'landscape',
+    pageMargins: [ 15, 15, 15, 15 ],
+    content: [ 
+      {table: branchReport},
     ],
-  },
+  };
+
+  const pdfDoc = pdfmake.createPdfKitDocument(listTableDocs, {});
+  pdfDoc.pipe(fs.createWriteStream('pdfs/branch-report.pdf'));
+  pdfDoc.end();
 }
 
-const listTableDocs = {
-  pageSize: 'A4',
-  pageOrientation: 'landscape',
-  pageMargins: [ 15, 15, 15, 15 ],
-  content: [ 
-    {table: tables.branchReport},
-  ],
-};
+main();
 
-const pdfDoc = pdfmake.createPdfKitDocument(listTableDocs, {});
-pdfDoc.pipe(fs.createWriteStream('pdfs/branch-report.pdf'));
-pdfDoc.end();
+// FUNCTIONS
+function createBranchReport(){
+  let rowCount = 1;
+  const format = branchData.branch[0].record;
+
+  const branchReport = {
+    headerRows: 2,
+    widths: [],
+    body: [],
+  }
+
+  createFormat();
+
+  function createFormat(){
+    insert('Branch', 2);
+    // insert('Opening Balance', 2);
+  }
+
+  function insert(value, rowSpan){
+    if(branchReport.body.length < rowCount){
+      branchReport.widths.push('*');
+      branchReport.body.push([]);
+    }
+
+    if(rowSpan > 1){
+      for(let i = 1; i < rowSpan; i++){
+        branchReport.body.push([]);
+        branchReport.body[(rowCount - 1) + i].push({});
+      }
+    }
+
+    const obj = {
+      text: value,
+      rowSpan,
+    }
+
+    branchReport.body[rowCount - 1].push(obj);
+  }
+
+  console.log(branchReport.widths);
+  console.log(branchReport.body);
+
+  return branchReport;
+}
