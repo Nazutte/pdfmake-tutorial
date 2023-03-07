@@ -47,12 +47,51 @@ function createBranchReport(){
 
   createFormat();
 
-  console.log(branchReport.widths);
-  console.log(branchReport.body);
+  branchData.branch.push({ name: 'Total', record: branchData.grandTotal});
+  branchData.branch.forEach(branch => {
+    const branchArr = insertBranch(branch);
+    branchReport.body.push(branchArr);
+  });
   
   return branchReport;
 
   // --------------------------------------------------------
+  function insertBranch(branch){
+    let col = [];
+    col.push(valueFormatter(branch.name, centerBold));
+
+    const { openingBalance, closingBalance, cashInRecord, cashInRecordTotal, cashOutRecord, cashOutRecordTotal, other } = branch.record;
+
+    col.push(valueFormatter(openingBalance, right));
+
+    insertCashflow(cashInRecord, cashInRecordTotal, right);
+    insertCashflow(cashOutRecord, cashOutRecordTotal, right);
+
+    col.push(valueFormatter(closingBalance, right));
+
+    insertCashflow(other, null, right);
+
+    return col;
+
+    function insertCashflow(cashflow, cashflowTotal, style){
+      for(const type in cashflow){
+        col.push(valueFormatter(cashflow[type], style));
+      }
+  
+      if(cashflowTotal != null){
+        col.push(valueFormatter(cashflowTotal, rightBold));
+      }
+    }
+
+    function valueFormatter(value, style){
+      if(typeof value == 'number'){
+        return style((value / 100).toFixed(2));
+      } else {
+        return style(value);
+      }
+    }
+  }
+
   function createFormat(){
     const { cashInRecord, cashOutRecord, other } = format;
 

@@ -1,4 +1,4 @@
-const fontSize = 3.5;
+const fontSize = 4;
 
 function centerBoldGray(text){
   return {
