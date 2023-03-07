@@ -36,7 +36,7 @@ main();
 
 // FUNCTIONS
 function createBranchReport(){
-  let rowCount = 1;
+  let rowCount = 0;
   const format = branchData.branch[0].record;
 
   const branchReport = {
@@ -47,34 +47,82 @@ function createBranchReport(){
 
   createFormat();
 
-  function createFormat(){
-    insert('Branch', 2);
-    // insert('Opening Balance', 2);
-  }
-
-  function insert(value, rowSpan){
-    if(branchReport.body.length < rowCount){
-      branchReport.widths.push('*');
-      branchReport.body.push([]);
-    }
-
-    if(rowSpan > 1){
-      for(let i = 1; i < rowSpan; i++){
-        branchReport.body.push([]);
-        branchReport.body[(rowCount - 1) + i].push({});
-      }
-    }
-
-    const obj = {
-      text: value,
-      rowSpan,
-    }
-
-    branchReport.body[rowCount - 1].push(obj);
-  }
-
   console.log(branchReport.widths);
   console.log(branchReport.body);
-
+  
   return branchReport;
+
+  // --------------------------------------------------------
+  function createFormat(){
+    const { cashInRecord, cashOutRecord, other } = format;
+
+    incrementRowCount(2);
+    insert('Branch', [], false);
+    insert('Opening Balance', [], false);
+    insert('Cash In', getCategory(cashInRecord), false);
+    insert('Cash Out', getCategory(cashOutRecord), false);
+    insert('Closing Balance', [], false);
+    insert('Other Balance', getCategory(other), true);
+  }
+
+  function insert(value, subValues, diff){
+    const obj = {
+      text: startCase(value),
+      fontSize: 5.4,
+      bold: true,
+      alignment: 'center',
+    }
+    
+    if(subValues.length){
+      if(!diff){
+        subValues.push('Total');
+      }
+
+      Object.assign(obj, { colSpan: subValues.length });
+    } else {
+      Object.assign(obj, { rowSpan: 2 });
+    }
+
+    branchReport.widths.push('*');
+
+    if(obj.colSpan){
+      branchReport.body[rowCount - 2].push(obj);
+
+      for(let i = 0; i < obj.colSpan - 1; i++){
+        branchReport.widths.push('*');
+        branchReport.body[rowCount - 2].push({});
+      }
+
+      for(let i = 0; i < obj.colSpan; i++){
+        const subObj = {
+          text: startCase(subValues[i]),
+          fontSize: 5.4,
+          bold: true,
+          alignment: 'center',
+        }
+
+        branchReport.body[rowCount - 1].push(subObj);
+      }
+    } else if(obj.rowSpan){
+      branchReport.body[rowCount - 2].push(obj);
+      branchReport.body[rowCount - 1].push({});
+    }
+  }
+
+  function getCategory(type){
+    let categoryArr = [];
+    for(const category in type){
+      categoryArr.push(category);
+    }
+    return categoryArr;
+  }
+
+  function incrementRowCount(byValue){
+    rowCount += byValue;
+
+    for(let i = 0; i < byValue; i++){
+      branchReport.body.push([]); 
+    }
+  }
+  // --------------------------------------------------------
 }
