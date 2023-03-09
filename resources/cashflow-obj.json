@@ -1,7 +1,9 @@
 {
+    "generalInfo": {
+        "days": 31
+    },
     "cashflowObj": [
         {
-            "day": 31,
             "dailyRecord": [
                 31,
                 32,
@@ -2663,7 +2665,6 @@
             }
         },
         {
-            "day": 31,
             "dailyRecord": [
                 46,
                 47,

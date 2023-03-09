@@ -66,7 +66,7 @@ function makeCashflowTable(cashflow, tableName, year, month){
     colSpan = 17;
   } else {
     allTotalIndex = 1;
-    amountOfColumns = new Date(year, month, 0).getDate() - 15;
+    amountOfColumns = cashflow.generalInfo.days - 15;
     isFirstHalf = false;
     colSpan = amountOfColumns + 3
   }
