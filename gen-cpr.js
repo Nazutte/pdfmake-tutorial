@@ -70,11 +70,6 @@ function makeCashflowTable(cashflow, tableName, year, month){
     isFirstHalf = false;
     colSpan = amountOfColumns + 3
   }
-  console.log('Both Half Total Position: ' + allTotalIndex);
-  console.log('Amount of Columns: ' + amountOfColumns);
-  console.log('First Half: ' + isFirstHalf);
-  console.log('Column Span: ' + colSpan);
-  console.log('\n');
 
   table.widths.push(80);
   table.body[0].push(centerBoldGray('Details'));
