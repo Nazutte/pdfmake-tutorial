@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "cpr": "node gen-cpr.js",
-    "br": "nodemon gen-br.js",
-    "cr": "nodemon gen-cr.js"
+    "br": "node gen-br.js",
+    "cr": "node gen-cr.js",
+    "dev": "yarn cpr && yarn br && yarn cr"
   },
   "dependencies": {
     "lodash": "^4.17.21",
